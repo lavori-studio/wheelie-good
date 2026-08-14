@@ -1,0 +1,185 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+  :root {
+    --dark-blue:#1A599C; --green:#658B43; --beige:#D2B89E;
+    --light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
+    --cream:#F1DDCB; --white:#FFFFFF;
+    --font-sub:'Noto Serif',Georgia,serif; --font-body:'Lato',sans-serif;
+    --radius:4px; --max-w:1160px; --transition:0.25s ease;
+  }
+
+  .wgb * { box-sizing: border-box; margin: 0; padding: 0; }
+  .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
+  .wgb a { text-decoration: none; color: inherit; }
+  .wgb img { display: block; max-width: 100%; }
+
+  .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+  .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
+  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
+  .wgb h2 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; font-size: clamp(1.5rem,3vw,2.2rem); }
+  .wgb .wgb-divider { width: 48px; height: 4px; background: var(--light-blue); border-radius: 2px; margin: 1rem 0 1.5rem; }
+  .wgb .wgb-intro { max-width: 640px; font-size: 1rem; line-height: 1.8; margin-bottom: 3rem; }
+
+  /* BRAND GRID */
+  .wgb .wgb-brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.25rem; }
+  .wgb .wgb-brand-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,.06); padding: 1.5rem 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .85rem; min-height: 140px; transition: box-shadow var(--transition), transform var(--transition); }
+  .wgb .wgb-brand-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.08); transform: translateY(-2px); }
+  .wgb .wgb-brand-logo { height: 44px; max-width: 100%; object-fit: contain; }
+  .wgb .wgb-brand-name { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--off-black); text-align: center; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .wgb .wgb-section { padding: 3rem 0; }
+    .wgb .wgb-container { padding: 0 1.25rem; }
+    .wgb .wgb-brand-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+    .wgb .wgb-brand-card { min-height: 110px; padding: 1.1rem .75rem; }
+    .wgb .wgb-brand-logo { height: 36px; }
+  }
+  /* FOOTER — full-width escape */
+  .wgb-footer {
+    background: var(--off-black);
+    color: var(--beige);
+    padding: 3.5rem 2rem 2rem;
+    border-top: 3px solid var(--green);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 0;
+  }
+  .wgb-footer-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.4fr;
+    gap: 3rem;
+  }
+  .wgb-footer-logo {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .75rem;
+  }
+  .wgb-footer-logo span { color: var(--light-blue); }
+  .wgb-footer-tagline {
+    font-size: .875rem;
+    line-height: 1.65;
+    color: var(--beige);
+    max-width: 260px;
+  }
+  .wgb-footer-col h4 {
+    font-family: var(--font-sub);
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--light-blue);
+    margin-bottom: .85rem;
+    font-weight: 400;
+  }
+  .wgb-footer-col p,
+  .wgb-footer-col a {
+    font-size: .875rem;
+    line-height: 1.85;
+    color: var(--beige);
+    display: block;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .wgb-footer-col a:hover { color: var(--white); }
+  .wgb-footer-bottom {
+    max-width: var(--max-w);
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+    font-size: .75rem;
+    color: rgba(210,184,158,.45);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  @media (max-width: 900px) {
+    .wgb-footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .wgb-footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .wgb-footer-inner { grid-template-columns: 1fr; }
+    .wgb-footer { padding: 3rem 1.25rem 2rem; }
+    .wgb-footer-bottom { flex-direction: column; }
+  }
+</style>
+
+<div class="wgb">
+<section class="wgb-section">
+  <div class="wgb-container">
+
+    <p class="wgb-eyebrow">What We Carry</p>
+    <h2>Brands We Sell</h2>
+    <div class="wgb-divider"></div>
+    <p class="wgb-intro">We're selective about what goes on our shelves. Every brand here is one we've ridden, tested, and trust to hold up — from frames and components to bags, helmets, and everyday gear.</p>
+
+    <div class="wgb-brand-grid">
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/abus-logo.jpg" alt="Abus logo" loading="lazy"><span class="wgb-brand-name">Abus</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/arkel-logo.avif" alt="Arkel logo" loading="lazy"><span class="wgb-brand-name">Arkel</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/goodr-logo.webp" alt="Goodr logo" loading="lazy"><span class="wgb-brand-name">Goodr</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/kona-logo.png" alt="Kona logo" loading="lazy"><span class="wgb-brand-name">Kona</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/lake-logo.avif" alt="Lake logo" loading="lazy"><span class="wgb-brand-name">Lake</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/lazer-logo.avif" alt="Lazer logo" loading="lazy"><span class="wgb-brand-name">Lazer</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/ortlieb_logo.avif" alt="Ortlieb logo" loading="lazy"><span class="wgb-brand-name">Ortlieb</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/outershell-bags-logo.avif" alt="Outer Shell logo" loading="lazy"><span class="wgb-brand-name">Outer Shell</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/paul-components-logo.png" alt="Paul Components logo" loading="lazy"><span class="wgb-brand-name">Paul Components</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/pdw-logo.avif" alt="PDW logo" loading="lazy"><span class="wgb-brand-name">PDW</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/phil-wood-logo.png" alt="Phil Wood logo" loading="lazy"><span class="wgb-brand-name">Phil Wood</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/racktime-logo.jpg" alt="Racktime logo" loading="lazy"><span class="wgb-brand-name">Racktime</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/rene-herse-logo.webp" alt="Rene Herse logo" loading="lazy"><span class="wgb-brand-name">Rene Herse</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/logo-simworks.avif" alt="Sim Works logo" loading="lazy"><span class="wgb-brand-name">Sim Works</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/surly-logo.jpg" alt="Surly logo" loading="lazy"><span class="wgb-brand-name">Surly</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/tern-logo.png" alt="Tern logo" loading="lazy"><span class="wgb-brand-name">Tern</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/velo-orange-logo.avif" alt="Velo Orange logo" loading="lazy"><span class="wgb-brand-name">Velo Orange</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/velocity-wheels-logo.png" alt="Velocity logo" loading="lazy"><span class="wgb-brand-name">Velocity</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/brands/white-industries-logo.png" alt="White Industries logo" loading="lazy"><span class="wgb-brand-name">White Industries</span></div>
+    </div>
+
+  </div>
+
+  <div class="wgb-footer">
+    <div class="wgb-footer-inner">
+      <div class="wgb-footer-brand">
+        <p class="wgb-footer-logo">Wheelie <span>Good</span> Bikes</p>
+        <p class="wgb-footer-tagline">A community-focused bike shop in Rogers Park, Chicago. Repairs, sales, e-bikes, cargo bikes, workshops, and group rides — for every kind of rider.</p>
+      </div>
+      <div class="wgb-footer-col">
+        <h4>Navigate</h4>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/policies">Policies</a>
+        <a href="/events">Events &amp; Community</a>
+      </div>
+      <div class="wgb-footer-col">
+        <h4>Hours</h4>
+        <p>Monday: Closed</p>
+        <p>Tuesday – Saturday: 10AM – 7PM</p>
+        <p>Sunday: 12PM – 4PM</p>
+      </div>
+      <div class="wgb-footer-col">
+        <h4>Contact</h4>
+        <a href="tel:7737399119">(773) 739-9119</a>
+        <a href="mailto:info@wheeliegoodbikeschicago.com">info@wheeliegoodbikeschicago.com</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=6981+N+Sheridan+Rd+Chicago+IL+60626" target="_blank">6981 N Sheridan Rd<br>Chicago, IL 60626</a>
+      </div>
+    </div>
+    <div class="wgb-footer-bottom">
+      <span>© 2026 Wheelie Good Bikes. All rights reserved.</span>
+      <span>Rogers Park, Chicago, IL</span>
+    </div>
+  </div>
+
+</section>
+</div>

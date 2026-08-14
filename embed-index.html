@@ -1,0 +1,379 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+  /* Hide Lightspeed's native footer on this page — our own .wgb-footer replaces it */
+  #tile-custom-footer-BCq2W2 { display: none !important; }
+
+  :root {
+    --dark-blue:#1A599C; --green:#658B43; --beige:#D2B89E;
+    --light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
+    --cream:#F1DDCB; --orange:#EF4723; --white:#FFFFFF;
+    --font-sub:'Noto Serif',Georgia,serif;
+    --font-body:'Lato',sans-serif;
+    --radius:4px; --max-w:1160px; --transition:0.25s ease;
+  }
+
+  .wgb * { box-sizing: border-box; margin: 0; padding: 0; }
+  .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
+  .wgb a { text-decoration: none; color: inherit; }
+  .wgb img { display: block; max-width: 100%; }
+
+  .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+  .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
+  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
+  .wgb h1, .wgb h2, .wgb h3 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; }
+  .wgb h1 { font-size: clamp(2rem,5vw,3.2rem); }
+  .wgb h2 { font-size: clamp(1.5rem,3vw,2.2rem); }
+  .wgb h3 { font-size: 1.15rem; }
+  .wgb .wgb-divider { width: 48px; height: 4px; background: var(--light-blue); border-radius: 2px; margin: 1rem 0 1.5rem; }
+
+  .wgb .wgb-btn {
+    display: inline-block; padding: .75rem 1.75rem;
+    font-family: var(--font-body); font-weight: 700; font-size: .875rem;
+    text-transform: uppercase; letter-spacing: .08em;
+    border-radius: var(--radius); transition: all var(--transition);
+    border: 2px solid transparent; cursor: pointer;
+  }
+  .wgb .wgb-btn-primary { background: var(--dark-blue); color: var(--white); }
+  .wgb .wgb-btn-primary:hover { background: var(--light-blue); }
+  .wgb .wgb-btn-outline { background: transparent; border-color: var(--dark-blue); color: var(--dark-blue); }
+  .wgb .wgb-btn-outline:hover { background: var(--dark-blue); color: var(--white); }
+  .wgb .wgb-btn-outline-white { background: transparent; border-color: var(--white); color: var(--white); }
+  .wgb .wgb-btn-outline-white:hover { background: var(--white); color: var(--off-black); }
+
+  /* HERO */
+  .wgb .wgb-hero {
+    background: var(--off-black); color: var(--white);
+    padding: 5rem 2rem; position: relative; overflow: hidden;
+  }
+  .wgb .wgb-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba(74,151,167,.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(101,139,67,.12) 0%, transparent 50%);
+  }
+  .wgb .wgb-hero-inner {
+    max-width: var(--max-w); margin: 0 auto;
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .wgb .wgb-hero-badge {
+    display: inline-block; background: var(--green); color: var(--white);
+    font-size: .75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .1em; padding: .35rem .9rem; border-radius: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .wgb .wgb-hero h1 { color: var(--white); margin-bottom: 1.25rem; }
+  .wgb .wgb-hero h1 em { font-style: normal; color: var(--light-blue); }
+  .wgb .wgb-hero-sub {
+    font-family: var(--font-sub); font-size: 1rem; color: var(--beige);
+    margin-bottom: 2rem; line-height: 1.75;
+  }
+  .wgb .wgb-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .wgb .wgb-hero-photo {
+    position: relative;
+  }
+  .wgb .wgb-hero-photo img {
+    width: 100%; height: 420px; object-fit: cover;
+    border-radius: var(--radius);
+    border: 3px solid rgba(255,255,255,.1);
+  }
+  .wgb .wgb-hero-photo-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(16,26,35,.85));
+    padding: 2rem 1.25rem .9rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  .wgb .wgb-hero-photo-caption p {
+    font-family: var(--font-sub); font-size: .8rem;
+    color: rgba(255,255,255,.8); font-style: italic;
+  }
+
+  /* INFO BAR */
+  .wgb .wgb-info-bar { background: var(--green); color: var(--white); padding: 1rem 2rem; }
+  .wgb .wgb-info-bar-inner {
+    max-width: var(--max-w); margin: 0 auto;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .wgb .wgb-info-item { display: flex; align-items: center; gap: .5rem; font-size: .85rem; }
+  .wgb .wgb-info-item svg { width: 16px; height: 16px; flex-shrink: 0; opacity: .85; }
+
+  /* SERVICES GRID */
+  .wgb .wgb-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .wgb .wgb-card {
+    display: block;
+    background: var(--white); border-radius: var(--radius);
+    padding: 1.75rem; border: 1px solid rgba(0,0,0,.06);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .wgb .wgb-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); transform: translateY(-2px); }
+  .wgb .wgb-card-icon { color: var(--dark-blue); margin-bottom: 1rem; }
+  .wgb .wgb-card h3 { margin-bottom: .5rem; }
+  .wgb .wgb-card p { font-size: .9rem; line-height: 1.65; }
+
+  /* CTA BAND */
+  .wgb .wgb-cta { background: var(--dark-blue); padding: 4rem 2rem; text-align: center; }
+  .wgb .wgb-cta .wgb-eyebrow { color: var(--light-blue); }
+  .wgb .wgb-cta h2 { color: var(--white); margin-bottom: 1rem; }
+  .wgb .wgb-cta p { font-family: var(--font-sub); color: var(--beige); max-width: 460px; margin: 0 auto 2rem; font-size: 1rem; }
+  .wgb .wgb-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .wgb .wgb-hero { padding: 3rem 1.25rem; }
+    .wgb .wgb-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .wgb .wgb-hero-photo { order: -1; }
+    .wgb .wgb-hero-photo img { height: 260px; }
+    .wgb .wgb-info-bar-inner { flex-direction: column; gap: .6rem; }
+    .wgb .wgb-section { padding: 3rem 0; }
+    .wgb .wgb-container { padding: 0 1.25rem; }
+    .wgb .wgb-cta { padding: 3rem 1.25rem; }
+  }
+  /* FOOTER — full-width escape */
+  .wgb-footer {
+    background: var(--off-black);
+    color: var(--beige);
+    padding: 3.5rem 2rem 2rem;
+    border-top: 3px solid var(--green);
+    /* Break out of platform content wrapper if needed */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 0;
+  }
+  .wgb-footer-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.4fr;
+    gap: 3rem;
+  }
+  .wgb-footer-logo {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .75rem;
+  }
+  .wgb-footer-logo span { color: var(--light-blue); }
+  .wgb-footer-tagline {
+    font-size: .875rem;
+    line-height: 1.65;
+    color: var(--beige);
+    max-width: 260px;
+  }
+  .wgb-footer-col h4 {
+    font-family: var(--font-sub);
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--light-blue);
+    margin-bottom: .85rem;
+    font-weight: 400;
+  }
+  .wgb-footer-col p,
+  .wgb-footer-col a {
+    font-size: .875rem;
+    line-height: 1.85;
+    color: var(--beige);
+    display: block;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .wgb-footer-col a:hover { color: var(--white); }
+  .wgb-footer-bottom {
+    max-width: var(--max-w);
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+    font-size: .75rem;
+    color: rgba(210,184,158,.45);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  @media (max-width: 900px) {
+    .wgb-footer-inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .wgb-footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .wgb-footer-inner { grid-template-columns: 1fr; }
+    .wgb-footer { padding: 3rem 1.25rem 2rem; }
+    .wgb-footer-bottom { flex-direction: column; }
+  }
+</style>
+
+<!-- HERO -->
+<div class="wgb">
+  <section class="wgb-hero">
+    <div class="wgb-hero-inner">
+      <div class="wgb-hero-text">
+        <span class="wgb-hero-badge">Now Open in Rogers Park</span>
+        <h1>A Bike Shop Built for <em>Real Riders</em></h1>
+        <p class="wgb-hero-sub">A new community-focused bike shop in Rogers Park offering repairs, bike sales, e-bikes, cargo bikes, group rides, events, and hands-on education for everyday riders.</p>
+        <div class="wgb-hero-actions">
+          <a href="/services" class="wgb-btn wgb-btn-primary">Our Services</a>
+          <a href="/about" class="wgb-btn wgb-btn-outline-white">About the Shop</a>
+        </div>
+      </div>
+      <div class="wgb-hero-photo">
+        <img
+          src="https://lavori-studio.github.io/wheelie-good/wheelie-good-ribbon-cutting.webp"
+          alt="Wheelie Good Bikes ribbon cutting — grand opening in Rogers Park"
+          loading="eager"
+        />
+        <div class="wgb-hero-photo-caption">
+          <p>Grand opening — Rogers Park, Chicago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO BAR -->
+  <div class="wgb-info-bar">
+    <div class="wgb-info-bar-inner">
+      <div class="wgb-info-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span><strong>Hours:</strong> Tue–Sat 10AM–7PM &nbsp;·&nbsp; Sun 12–4PM &nbsp;·&nbsp; Mon Closed</span>
+      </div>
+      <div class="wgb-info-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.27 12 19.79 19.79 0 011.21 3.43 2 2 0 013.22 1.25h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span><strong>(773) 739-9119</strong></span>
+      </div>
+      <div class="wgb-info-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>6981 N Sheridan Rd, Chicago, IL 60626</span>
+      </div>
+      <div class="wgb-info-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>info@wheeliegoodbikeschicago.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE OFFER -->
+  <section class="wgb-section">
+    <div class="wgb-container">
+      <p class="wgb-eyebrow">What We Do</p>
+      <h2>Everything you need to ride with confidence</h2>
+      <div class="wgb-divider"></div>
+      <div class="wgb-grid-3">
+
+        <div class="wgb-card">
+          <div class="wgb-card-icon">
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Bike Repairs</h3>
+          <div class="wgb-divider" style="background:var(--green);"></div>
+          <p>From safety checks to full overhauls, our mechanics bring real expertise to every bike. Appointments available to minimize your time without a ride.</p>
+        </div>
+
+        <div class="wgb-card">
+          <div class="wgb-card-icon">
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3>Bike Sales</h3>
+          <div class="wgb-divider" style="background:var(--green);"></div>
+          <p>Standard bikes, e-bikes, and cargo bikes — we carry options for commuters, families, and everyday riders. We'll help you find the right fit.</p>
+        </div>
+
+        <a href="/events" class="wgb-card">
+          <div class="wgb-card-icon">
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Community, Events & Workshops</h3>
+          <div class="wgb-divider" style="background:var(--green);"></div>
+          <p>Group rides, hands-on workshops, and community gatherings. We believe cycling is more fun together — whatever your experience level, from fixing a flat to understanding your drivetrain.</p>
+        </a>
+
+        <a href="/services" class="wgb-card">
+          <div class="wgb-card-icon">
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>E-Bikes</h3>
+          <div class="wgb-divider" style="background:var(--green);"></div>
+          <p>E-bikes for easier commutes and everyday errands. We'll help you find the right setup, sales and service available.</p>
+        </a>
+
+        <a href="/cargo-bikes" class="wgb-card">
+          <div class="wgb-card-icon">
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 19h9V9H6a3 3 0 000 6h9"/><path d="M12 9V5h3l3 4"/></svg>
+          </div>
+          <h3>Cargo Bikes</h3>
+          <div class="wgb-divider" style="background:var(--green);"></div>
+          <p>Cargo bikes for families and haulers — real solutions for carrying kids, groceries, and gear by bike. Sales and service available.</p>
+        </a>
+
+        <div class="wgb-card">
+          <div class="wgb-card-icon">
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+          </div>
+          <h3>Bike Trade-In</h3>
+          <div class="wgb-divider" style="background:var(--green);"></div>
+          <p>Ready to upgrade? Trade in your current bike toward something new. Roll it in and we handle the rest — no listings, no hassle.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="wgb-cta">
+    <div class="wgb-container">
+      <p class="wgb-eyebrow">Ready to Ride?</p>
+      <h2>Stop in, call, or book a service appointment</h2>
+      <p>We're at 6981 N Sheridan Rd in Rogers Park. Appointments available to minimize your time without a bike.</p>
+      <div class="wgb-cta-actions">
+        <a href="/services" class="wgb-btn wgb-btn-primary" style="background:var(--light-blue);">Book a Service</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=6981+N+Sheridan+Rd+Chicago+IL+60626" target="_blank" class="wgb-btn wgb-btn-outline-white">Get Directions</a>
+      </div>
+    </div>
+  
+
+  <!-- FOOTER -->
+  <div class="wgb-footer">
+    <div class="wgb-footer-inner">
+      <div class="wgb-footer-brand">
+        <p class="wgb-footer-logo">Wheelie <span>Good</span> Bikes</p>
+        <p class="wgb-footer-tagline">A community-focused bike shop in Rogers Park, Chicago. Repairs, sales, e-bikes, cargo bikes, workshops, and group rides — for every kind of rider.</p>
+      </div>
+      <div class="wgb-footer-col">
+        <h4>Navigate</h4>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/policies">Policies</a>
+        <a href="/events">Events &amp; Community</a>
+      </div>
+      <div class="wgb-footer-col">
+        <h4>Hours</h4>
+        <p>Monday: Closed</p>
+        <p>Tuesday – Saturday: 10AM – 7PM</p>
+        <p>Sunday: 12PM – 4PM</p>
+      </div>
+      <div class="wgb-footer-col">
+        <h4>Contact</h4>
+        <a href="tel:7737399119">(773) 739-9119</a>
+        <a href="mailto:info@wheeliegoodbikeschicago.com">info@wheeliegoodbikeschicago.com</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=6981+N+Sheridan+Rd+Chicago+IL+60626" target="_blank">6981 N Sheridan Rd<br>Chicago, IL 60626</a>
+      </div>
+    </div>
+    <div class="wgb-footer-bottom">
+      <span>© 2026 Wheelie Good Bikes. All rights reserved.</span>
+      <span>Rogers Park, Chicago, IL</span>
+    </div>
+  </div>
+
+</section>
+
+</div>
