@@ -1,0 +1,332 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+:root {
+--dark-blue:#1A599C; --green:#658B43; --beige:#D2B89E;
+--light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
+--cream:#F1DDCB; --orange:#EF4723; --white:#FFFFFF;
+--font-sub:'Noto Serif',Georgia,serif; --font-body:'Lato',sans-serif;
+--radius:4px; --max-w:1160px; --transition:0.25s ease;
+}
+.wgb * { box-sizing: border-box; margin: 0; padding: 0; }
+.wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
+.wgb a { text-decoration: none; color: inherit; }
+.wgb img { display: block; max-width: 100%; }
+.wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+.wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
+.wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
+.wgb h2, .wgb h3 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; }
+.wgb h2 { font-size: clamp(1.5rem,3vw,2.2rem); }
+.wgb h3 { font-size: 1.15rem; }
+.wgb .wgb-divider { width: 48px; height: 4px; background: var(--light-blue); border-radius: 2px; margin: 1rem 0 1.5rem; }
+.wgb .wgb-btn { display: inline-block; padding: .75rem 1.75rem; font-family: var(--font-body); font-weight: 700; font-size: .875rem; text-transform: uppercase; letter-spacing: .08em; border-radius: var(--radius); transition: all var(--transition); border: 2px solid transparent; }
+.wgb .wgb-btn-primary { background: var(--dark-blue); color: var(--white); }
+.wgb .wgb-btn-primary:hover { background: var(--light-blue); }
+.wgb .wgb-btn-white { background: var(--white); color: var(--green); border-color: var(--white); }
+.wgb .wgb-btn-white:hover { background: transparent; color: var(--white); }
+.wgb .wgb-appt-banner { background: var(--green); color: var(--white); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.wgb .wgb-appt-banner strong { font-size: 1rem; display: block; margin-bottom: .35rem; }
+.wgb .wgb-appt-banner p { font-family: var(--font-sub); font-size: .95rem; line-height: 1.6; max-width: 520px; }
+.wgb .wgb-caveat { background: rgba(163,35,39,.07); border: 1px solid rgba(163,35,39,.2); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; font-size: .875rem; line-height: 1.6; }
+.wgb .wgb-caveat strong { color: var(--red); }
+.wgb .wgb-service-grid { display: grid; gap: 1.5rem; margin-top: 2.5rem; }
+.wgb .wgb-service-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,.06); display: grid; grid-template-columns: 8px 1fr; transition: box-shadow var(--transition); }
+.wgb .wgb-service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.wgb .wgb-service-accent { background: var(--dark-blue); }
+.wgb .wgb-service-body { padding: 2rem 2rem 2rem 1.75rem; }
+.wgb .wgb-service-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.wgb .wgb-service-header h3 { font-size: 1.1rem; margin-bottom: .25rem; }
+.wgb .wgb-best-for { font-family: var(--font-sub); font-size: .85rem; color: var(--green); font-style: italic; }
+.wgb .wgb-price { font-size: 1.5rem; font-weight: 700; color: var(--dark-blue); white-space: nowrap; }
+.wgb .wgb-includes h4 { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--beige); font-family: var(--font-sub); margin: 1rem 0 .5rem; }
+.wgb .wgb-includes h4:first-child { margin-top: .5rem; }
+.wgb .wgb-include-list { list-style: none; display: flex; flex-direction: column; gap: .3rem; }
+.wgb .wgb-include-list li { font-size: .875rem; padding-left: 1.25rem; position: relative; }
+.wgb .wgb-include-list li::before { content: '—'; position: absolute; left: 0; color: var(--light-blue); font-weight: 700; }
+.wgb .wgb-service-note { margin-top: 1rem; background: rgba(74,151,167,.08); border-left: 3px solid var(--light-blue); padding: .6rem .9rem; font-size: .825rem; font-family: var(--font-sub); border-radius: 0 var(--radius) var(--radius) 0; }
+.wgb .wgb-also-includes { font-size: .85rem; color: var(--green); font-style: italic; margin-top: .5rem; font-family: var(--font-sub); }
+.wgb .wgb-tier-1 .wgb-service-accent { background: var(--light-blue); }
+.wgb .wgb-tier-2 .wgb-service-accent { background: var(--dark-blue); }
+.wgb .wgb-tier-3 .wgb-service-accent { background: var(--green); }
+.wgb .wgb-cargo { margin-top: 4rem; }
+.wgb .wgb-alacarte { margin-top: 4rem; }
+.wgb .wgb-alacarte-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0 2rem; margin-top: 1rem; }
+.wgb .wgb-alacarte-item { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .4rem 0; border-bottom: 1px solid rgba(0,0,0,.06); }
+.wgb .wgb-alacarte-item span { font-size: .9rem; }
+.wgb .wgb-alacarte-item span em { font-style: italic; color: #666; font-size: .85rem; }
+.wgb .wgb-alacarte-item strong { font-weight: 700; color: var(--dark-blue); white-space: nowrap; }
+.wgb .wgb-alacarte-cat { grid-column: 1 / -1; font-family: var(--font-sub); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--green); margin: 1.25rem 0 .1rem; font-weight: 600; }
+.wgb .wgb-alacarte-cat:first-child { margin-top: 0; }
+.wgb .wgb-tradein { background: var(--off-black); color: var(--white); border-radius: var(--radius); padding: 3rem; margin-top: 4rem; }
+.wgb .wgb-tradein .wgb-eyebrow { color: var(--light-blue); }
+.wgb .wgb-tradein h2 { color: var(--white); }
+.wgb .wgb-tradein p { color: var(--beige); font-size: .95rem; line-height: 1.7; max-width: 560px; margin-bottom: 1.5rem; }
+.wgb .wgb-steps { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.wgb .wgb-step { flex: 1; min-width: 150px; }
+.wgb .wgb-step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--green); color: var(--white); font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: .75rem; }
+.wgb .wgb-step p { font-size: .875rem; color: var(--beige); }
+.wgb .wgb-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.wgb .wgb-pillar { background: var(--white); border-radius: var(--radius); padding: 1.75rem; border-top: 4px solid var(--dark-blue); }
+.wgb .wgb-pillar:nth-child(2) { border-top-color: var(--green); }
+.wgb .wgb-pillar:nth-child(3) { border-top-color: var(--light-blue); }
+.wgb .wgb-pillar h3 { margin-bottom: .5rem; font-size: 1rem; }
+.wgb .wgb-pillar p { font-size: .875rem; line-height: 1.65; }
+@media (max-width: 768px) {
+.wgb .wgb-section { padding: 3rem 0; }
+.wgb .wgb-container { padding: 0 1.25rem; }
+.wgb .wgb-appt-banner { flex-direction: column; align-items: flex-start; }
+.wgb .wgb-steps { flex-direction: column; }
+.wgb .wgb-tradein { padding: 2rem 1.25rem; }
+.wgb .wgb-service-card { grid-template-columns: 6px 1fr; }
+}
+.wgb-footer {
+background: var(--off-black);
+color: var(--beige);
+padding: 3.5rem 2rem 2rem;
+border-top: 3px solid var(--green);
+width: 100vw;
+position: relative;
+left: 50%;
+right: 50%;
+margin-left: -50vw;
+margin-right: -50vw;
+margin-top: 0;
+}
+.wgb-footer-inner {
+max-width: var(--max-w);
+margin: 0 auto;
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1.4fr;
+gap: 3rem;
+}
+.wgb-footer-logo {
+font-family: var(--font-body);
+font-weight: 700;
+font-size: 1rem;
+color: var(--white);
+text-transform: uppercase;
+letter-spacing: .06em;
+margin-bottom: .75rem;
+}
+.wgb-footer-logo span { color: var(--light-blue); }
+.wgb-footer-tagline {
+font-size: .875rem;
+line-height: 1.65;
+color: var(--beige);
+max-width: 260px;
+}
+.wgb-footer-col h4 {
+font-family: var(--font-sub);
+font-size: .75rem;
+text-transform: uppercase;
+letter-spacing: .1em;
+color: var(--light-blue);
+margin-bottom: .85rem;
+font-weight: 400;
+}
+.wgb-footer-col p,
+.wgb-footer-col a {
+font-size: .875rem;
+line-height: 1.85;
+color: var(--beige);
+display: block;
+text-decoration: none;
+transition: color var(--transition);
+}
+.wgb-footer-col a:hover { color: var(--white); }
+.wgb-footer-bottom {
+max-width: var(--max-w);
+margin: 2rem auto 0;
+padding-top: 1.5rem;
+border-top: 1px solid rgba(255,255,255,.1);
+font-size: .75rem;
+color: rgba(210,184,158,.45);
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: .5rem;
+}
+@media (max-width: 900px) {
+.wgb-footer-inner {
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+.wgb-footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+.wgb-footer-inner { grid-template-columns: 1fr; }
+.wgb-footer { padding: 3rem 1.25rem 2rem; }
+.wgb-footer-bottom { flex-direction: column; }
+}
+</style>
+<div class="wgb">
+<section class="wgb-section">
+<div class="wgb-container">
+<div class="wgb-appt-banner">
+<div>
+<strong>Book an Appointment</strong>
+<p>We offer scheduled appointments so you spend less time without your bike. Drop-ins always welcome, but booking ahead helps us get to your bike faster.</p>
+</div>
+<a href="mailto:info@wheeliegoodbikeschicago.com" class="wgb-btn wgb-btn-white">Schedule Service</a>
+</div>
+<div class="wgb-caveat">
+<p><strong>Please note:</strong> Every bike is different, and our shop prioritizes safety and personalized recommendations above all else. Assessments are always free — we'll take a look and walk you through what your bike actually needs before anything is booked. The prices listed reflect our standard packages — your final quote may vary based on your bike's specific needs, component condition, or parts required. A $5 minimum labor charge applies to all service. We'll always communicate clearly before any additional work is done.</p>
+</div>
+<p class="wgb-eyebrow">Service Packages</p>
+<h2>Repair & Tune-Up Tiers</h2>
+<div class="wgb-divider"></div>
+<div class="wgb-service-grid">
+<div class="wgb-service-card wgb-tier-1">
+<div class="wgb-service-accent"></div>
+<div class="wgb-service-body">
+<div class="wgb-service-header">
+<div><h3>Level 1 — Adjustment & Safety Check</h3><p class="wgb-best-for">Best for: Bikes in generally good condition that need basic maintenance</p></div>
+<div class="wgb-price">$109</div>
+</div>
+<div class="wgb-includes">
+<h4>Cleaning</h4>
+<ul class="wgb-include-list"><li>Basic bike wash</li><li>Light drivetrain wipe and lubrication</li></ul>
+<h4>Inspection</h4>
+<ul class="wgb-include-list"><li>Frame and fork inspection</li><li>Wheel and tire inspection</li><li>Brake system inspection</li></ul>
+<h4>Adjustments & Service</h4>
+<ul class="wgb-include-list"><li>Brake adjustment</li><li>Gear (shifting) adjustment</li><li>Torque check on critical bolts</li><li>Tire inflation</li><li>Minor wheel truing (if needed)</li></ul>
+<h4>Final Check</h4>
+<ul class="wgb-include-list"><li>Test ride to confirm performance</li></ul>
+</div>
+</div>
+</div>
+<div class="wgb-service-card wgb-tier-2">
+<div class="wgb-service-accent"></div>
+<div class="wgb-service-body">
+<div class="wgb-service-header">
+<div><h3>Level 2 — Performance Tune-Up</h3><p class="wgb-best-for">Best for: Bikes ridden regularly that need deeper cleaning and performance work</p></div>
+<div class="wgb-price">$179</div>
+</div>
+<p class="wgb-also-includes">Includes everything in Level 1, plus:</p>
+<div class="wgb-includes">
+<h4>Deep Cleaning</h4>
+<ul class="wgb-include-list"><li>Full bike wash</li><li>Detailed component cleaning</li><li>Drivetrain degreasing (on-bike)</li><li>Chain lubrication</li></ul>
+<h4>Performance</h4>
+<ul class="wgb-include-list"><li>Chain wear measurement</li><li>Brake system optimization</li><li>Minor to moderate wheel truing</li><li>Cable and housing lubrication</li></ul>
+<h4>Final Check</h4>
+<ul class="wgb-include-list"><li>Comprehensive test ride</li></ul>
+</div>
+<div class="wgb-service-note" style="border-left-color:var(--dark-blue);background:rgba(26,89,156,.06);">
+<strong>E-Bike Note:</strong> Firmware updates included for supported systems. Not all e-bikes are supported — see our <a href="/ebike-policy" style="color:inherit;text-decoration:underline;">E-Bike Service Policy</a> before booking.
+</div>
+</div>
+</div>
+<div class="wgb-service-card wgb-tier-3">
+<div class="wgb-service-accent"></div>
+<div class="wgb-service-body">
+<div class="wgb-service-header">
+<div><h3>Level 3 — Comprehensive Overhaul</h3><p class="wgb-best-for">Best for: Heavily used, neglected, or long-interval bikes needing full service</p></div>
+<div class="wgb-price">$269</div>
+</div>
+<p class="wgb-also-includes">Includes everything in Level 2, plus:</p>
+<div class="wgb-includes">
+<h4>Deep Cleaning</h4>
+<ul class="wgb-include-list"><li>Full bike wash</li><li>Deep drivetrain cleaning (components removed and cleaned)</li></ul>
+<h4>System Evaluation</h4>
+<ul class="wgb-include-list"><li>Bearing inspection (hubs, headset, bottom bracket)</li><li>Full wheel truing and correction</li><li>Complete brake system safety evaluation</li></ul>
+<h4>Final Check</h4>
+<ul class="wgb-include-list"><li>Extended test ride</li></ul>
+</div>
+<div class="wgb-service-note" style="border-left-color:var(--green);background:rgba(101,139,67,.06);">
+<strong>E-Bike Note:</strong> Firmware updates included for supported systems. Not all e-bikes are supported — see our <a href="/ebike-policy" style="color:inherit;text-decoration:underline;">E-Bike Service Policy</a> before booking.
+</div>
+</div>
+</div>
+</div>
+<div class="wgb-alacarte">
+<p class="wgb-eyebrow">Individual Services</p>
+<h2>A La Carte Services</h2>
+<div class="wgb-divider"></div>
+<p style="max-width:640px;font-size:.95rem;margin-bottom:1.5rem;">Just need one thing done rather than a full tune-up? These common repairs and installs are available individually, priced on their own.</p>
+<div class="wgb-alacarte-grid">
+<h4 class="wgb-alacarte-cat">Drivetrain &amp; General Repair</h4>
+<div class="wgb-alacarte-item"><span>Flat Fix <em>(labor only, parts additional)</em></span><strong>$15</strong></div>
+<div class="wgb-alacarte-item"><span>Derailleur / Shift Adjustment</span><strong>$25</strong></div>
+<div class="wgb-alacarte-item"><span>Chain Install / Replacement</span><strong>$20</strong></div>
+<div class="wgb-alacarte-item"><span>Spoke Replacement</span><strong>$40</strong></div>
+<h4 class="wgb-alacarte-cat">Brakes</h4>
+<div class="wgb-alacarte-item"><span>Brake Adjustment</span><strong>$25</strong></div>
+<div class="wgb-alacarte-item"><span>Brake Pad Replacement <em>(per wheel)</em></span><strong>$25</strong></div>
+<div class="wgb-alacarte-item"><span>Full Brake System Service</span><strong>$85</strong></div>
+<div class="wgb-alacarte-item"><span>Hydraulic Brake Bleed <em>(per brake, includes fluid)</em></span><strong>$52</strong></div>
+<h4 class="wgb-alacarte-cat">Installs &amp; Accessories</h4>
+<div class="wgb-alacarte-item"><span>Child Seat Install</span><strong>$35</strong></div>
+<div class="wgb-alacarte-item"><span>Fender Install</span><strong>$40</strong></div>
+<div class="wgb-alacarte-item"><span>Rack Install</span><strong>$30</strong></div>
+<h4 class="wgb-alacarte-cat">Builds</h4>
+<div class="wgb-alacarte-item"><span>Bike Build (Box Bike)</span><strong>$100</strong></div>
+</div>
+<div class="wgb-service-note" style="margin-top:1.5rem;">A $5 minimum labor charge applies to all service, a la carte included.</div>
+</div>
+<div class="wgb-cargo">
+<div class="wgb-appt-banner" style="background:var(--white);border:1px solid rgba(0,0,0,.06);color:var(--off-black);">
+<div>
+<strong style="color:var(--off-black);">Cargo Bike Service</strong>
+<p style="color:#444;">All standard service tiers above apply to cargo bikes too — longtail, box bike, and mid-tail setups. We also handle brake, drivetrain, and accessory work built for high-load hauling.</p>
+</div>
+<a href="/cargo-bikes" class="wgb-btn wgb-btn-primary">See Cargo Bikes</a>
+</div>
+</div>
+<div class="wgb-tradein">
+<p class="wgb-eyebrow">Ready to Upgrade?</p>
+<h2>Bike Trade-In</h2>
+<div class="wgb-divider"></div>
+<p>Got your eye on a new bike, but your current one is just hanging around? Trade it in and put that value toward something new — no listings, no awkward meetups, no hassle. <strong>Trade-in credit can only be applied toward a new bike purchase</strong> — it can't be used toward a used or pre-owned bike.</p>
+<div class="wgb-steps">
+<div class="wgb-step"><div class="wgb-step-num">1</div><p>Bring us your well-loved (or lightly neglected) bike</p></div>
+<div class="wgb-step"><div class="wgb-step-num">2</div><p>Take a spin around the shop while we check it out</p></div>
+<div class="wgb-step"><div class="wgb-step-num">3</div><p>Use your credit toward a new bike and get back out there</p></div>
+</div>
+<div style="margin-top:2rem;">
+<a href="mailto:info@wheeliegoodbikeschicago.com" class="wgb-btn" style="background:var(--light-blue);color:var(--white);">Ask About Trade-In</a>
+</div>
+</div>
+<div style="margin-top:5rem;">
+<p class="wgb-eyebrow">Why WGB</p>
+<h2>Partners in Your Progress</h2>
+<div class="wgb-divider"></div>
+<div class="wgb-pillars">
+<div class="wgb-pillar"><h3>Customer-First Philosophy</h3><p>Every decision begins with the rider's experience. Our goal is to help each customer feel confident, comfortable, and informed.</p></div>
+<div class="wgb-pillar"><h3>Operational Efficiency</h3><p>We maintain lean, well-organized systems that allow us to provide fast, consistent, and transparent service — accessible without sacrificing quality.</p></div>
+<div class="wgb-pillar"><h3>Expert Knowledge</h3><p>Our mechanics and educators bring years of hands-on expertise. We use that knowledge not just to fix problems, but to teach riders how to prevent them.</p></div>
+</div>
+</div>
+</div>
+<div class="wgb-footer">
+<div class="wgb-footer-inner">
+<div class="wgb-footer-brand">
+<p class="wgb-footer-logo">Wheelie <span>Good</span> Bikes</p>
+<p class="wgb-footer-tagline">A community-focused bike shop in Rogers Park, Chicago. Repairs, sales, e-bikes, cargo bikes, workshops, and group rides — for every kind of rider.</p>
+</div>
+<div class="wgb-footer-col">
+<h4>Navigate</h4>
+<a href="/">Home</a>
+<a href="/services">Services</a>
+<a href="/about">About</a>
+<a href="/policies">Policies</a>
+<a href="/events">Events &amp; Community</a>
+</div>
+<div class="wgb-footer-col">
+<h4>Hours</h4>
+<p>Monday: Closed</p>
+<p>Tuesday – Saturday: 10AM – 7PM</p>
+<p>Sunday: 12PM – 4PM</p>
+</div>
+<div class="wgb-footer-col">
+<h4>Contact</h4>
+<a href="tel:7737399119">(773) 739-9119</a>
+<a href="mailto:info@wheeliegoodbikeschicago.com">info@wheeliegoodbikeschicago.com</a>
+<a href="https://www.google.com/maps/dir/?api=1&destination=6981+N+Sheridan+Rd+Chicago+IL+60626" target="_blank">6981 N Sheridan Rd<br>Chicago, IL 60626</a>
+</div>
+</div>
+<div class="wgb-footer-bottom">
+<span>© 2026 Wheelie Good Bikes. All rights reserved.</span>
+<span>Rogers Park, Chicago, IL</span>
+</div>
+</div>
+</section>
+</div>
