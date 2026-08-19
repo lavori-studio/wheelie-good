@@ -11,6 +11,7 @@
 .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
 .wgb a { text-decoration: none; color: inherit; }
 .wgb img { display: block; max-width: 100%; }
+.wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
 .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
 .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
 .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
@@ -29,10 +30,10 @@
 .wgb .wgb-caveat { background: rgba(163,35,39,.07); border: 1px solid rgba(163,35,39,.2); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; font-size: .875rem; line-height: 1.6; }
 .wgb .wgb-caveat strong { color: var(--red); }
 .wgb .wgb-service-grid { display: grid; gap: 1.5rem; margin-top: 2.5rem; }
-.wgb .wgb-service-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,0,0,.06); display: grid; grid-template-columns: 8px 1fr; transition: box-shadow var(--transition); }
+.wgb .wgb-service-card { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(0,0,0,.12); transition: box-shadow var(--transition); }
 .wgb .wgb-service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); }
-.wgb .wgb-service-accent { background: var(--dark-blue); }
-.wgb .wgb-service-body { padding: 2rem 2rem 2rem 1.75rem; }
+.wgb .wgb-service-accent { width: 10px; height: 10px; border-radius: 3px; background: var(--dark-blue); margin-bottom: .85rem; }
+.wgb .wgb-service-body { padding: 2rem; }
 .wgb .wgb-service-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
 .wgb .wgb-service-header h3 { font-size: 1.1rem; margin-bottom: .25rem; }
 .wgb .wgb-best-for { font-family: var(--font-sub); font-size: .85rem; color: var(--green); font-style: italic; }
@@ -76,7 +77,6 @@
 .wgb .wgb-appt-banner { flex-direction: column; align-items: flex-start; }
 .wgb .wgb-steps { flex-direction: column; }
 .wgb .wgb-tradein { padding: 2rem 1.25rem; }
-.wgb .wgb-service-card { grid-template-columns: 6px 1fr; }
 }
 .wgb-footer {
 background: var(--off-black);

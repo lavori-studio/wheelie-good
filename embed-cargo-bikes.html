@@ -13,6 +13,7 @@
   .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
   .wgb a { text-decoration: none; color: inherit; }
   .wgb img { display: block; max-width: 100%; }
+  .wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
 
   .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
   .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
@@ -55,7 +56,7 @@
   .wgb .wgb-cargo-photo img { width: 100%; height: 340px; object-fit: cover; display: block; }
   .wgb .wgb-cargo-photo-caption { background: var(--off-black); padding: .75rem 1rem; }
   .wgb .wgb-cargo-photo-caption p { font-family: var(--font-sub); font-size: .8rem; color: var(--beige); font-style: italic; }
-  .wgb .wgb-cargo-content { background: var(--white); border-radius: var(--radius); padding: 1.75rem; border: 1px solid rgba(0,0,0,.06); border-left: 6px solid var(--green); }
+  .wgb .wgb-cargo-content { background: var(--white); border-radius: var(--radius); padding: 1.75rem; border: 1px solid rgba(0,0,0,.12); }
   .wgb .wgb-cargo-content h3 { margin-bottom: .4rem; }
   .wgb .wgb-cargo-subtitle { font-family: var(--font-sub); font-style: italic; color: var(--green); font-size: .875rem; margin-bottom: 1rem; }
   .wgb .wgb-include-list { list-style: none; display: flex; flex-direction: column; gap: .3rem; }
