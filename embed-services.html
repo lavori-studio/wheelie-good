@@ -5,6 +5,7 @@
 --light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
 --cream:#F1DDCB; --orange:#EF4723; --white:#FFFFFF;
 --font-sub:'Noto Serif',Georgia,serif; --font-body:'Lato',sans-serif;
+--green-text:#4B6B32;
 --radius:4px; --max-w:1160px; --transition:0.25s ease;
 }
 .wgb * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,7 +15,7 @@
 .wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
 .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
 .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
-.wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
+.wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green-text); margin-bottom: .5rem; }
 .wgb h2, .wgb h3 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; }
 .wgb h2 { font-size: clamp(1.5rem,3vw,2.2rem); }
 .wgb h3 { font-size: 1.15rem; }
@@ -36,7 +37,7 @@
 .wgb .wgb-service-body { padding: 2rem; }
 .wgb .wgb-service-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
 .wgb .wgb-service-header h3 { font-size: 1.1rem; margin-bottom: .25rem; }
-.wgb .wgb-best-for { font-family: var(--font-sub); font-size: .85rem; color: var(--green); font-style: italic; }
+.wgb .wgb-best-for { font-family: var(--font-sub); font-size: .85rem; color: var(--green-text); font-style: italic; }
 .wgb .wgb-price { font-size: 1.5rem; font-weight: 700; color: var(--dark-blue); white-space: nowrap; }
 .wgb .wgb-includes h4 { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--beige); font-family: var(--font-sub); margin: 1rem 0 .5rem; }
 .wgb .wgb-includes h4:first-child { margin-top: .5rem; }
@@ -44,7 +45,7 @@
 .wgb .wgb-include-list li { font-size: .875rem; padding-left: 1.25rem; position: relative; }
 .wgb .wgb-include-list li::before { content: '—'; position: absolute; left: 0; color: var(--light-blue); font-weight: 700; }
 .wgb .wgb-service-note { margin-top: 1rem; background: rgba(74,151,167,.08); border-left: 3px solid var(--light-blue); padding: .6rem .9rem; font-size: .825rem; font-family: var(--font-sub); border-radius: 0 var(--radius) var(--radius) 0; }
-.wgb .wgb-also-includes { font-size: .85rem; color: var(--green); font-style: italic; margin-top: .5rem; font-family: var(--font-sub); }
+.wgb .wgb-also-includes { font-size: .85rem; color: var(--green-text); font-style: italic; margin-top: .5rem; font-family: var(--font-sub); }
 .wgb .wgb-tier-1 .wgb-service-accent { background: var(--light-blue); }
 .wgb .wgb-tier-2 .wgb-service-accent { background: var(--dark-blue); }
 .wgb .wgb-tier-3 .wgb-service-accent { background: var(--green); }
@@ -55,7 +56,7 @@
 .wgb .wgb-alacarte-item span { font-size: .9rem; }
 .wgb .wgb-alacarte-item span em { font-style: italic; color: #666; font-size: .85rem; }
 .wgb .wgb-alacarte-item strong { font-weight: 700; color: var(--dark-blue); white-space: nowrap; }
-.wgb .wgb-alacarte-cat { grid-column: 1 / -1; font-family: var(--font-sub); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--green); margin: 1.25rem 0 .1rem; font-weight: 600; }
+.wgb .wgb-alacarte-cat { grid-column: 1 / -1; font-family: var(--font-sub); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--green-text); margin: 1.25rem 0 .1rem; font-weight: 600; }
 .wgb .wgb-alacarte-cat:first-child { margin-top: 0; }
 .wgb .wgb-tradein { background: var(--off-black); color: var(--white); border-radius: var(--radius); padding: 3rem; margin-top: 4rem; }
 .wgb .wgb-tradein .wgb-eyebrow { color: var(--light-blue); }
@@ -139,7 +140,7 @@ margin: 2rem auto 0;
 padding-top: 1.5rem;
 border-top: 1px solid rgba(255,255,255,.1);
 font-size: .75rem;
-color: rgba(210,184,158,.45);
+color: rgba(210,184,158,.75);
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
@@ -169,10 +170,9 @@ gap: 2rem;
 <a href="mailto:info@wheeliegoodbikeschicago.com" class="wgb-btn wgb-btn-white">Schedule Service</a>
 </div>
 <div class="wgb-caveat">
-<p><strong>Please note:</strong> Every bike is different, and our shop prioritizes safety and personalized recommendations above all else. Assessments are always free — we'll take a look and walk you through what your bike actually needs before anything is booked. The prices listed reflect our standard packages — your final quote may vary based on your bike's specific needs, component condition, or parts required. A $5 minimum labor charge applies to all service. We'll always communicate clearly before any additional work is done.</p>
+<p><strong>Please note:</strong> Every bike is different, and our shop prioritizes safety and personalized recommendations above all else. Assessments are always free — we’ll take a look and walk you through what your bike actually needs before anything is booked. The prices listed reflect our standard packages — your final quote may vary based on your bike’s specific needs, component condition, or parts required. A $5 minimum labor charge applies to all service. We’ll always communicate clearly before any additional work is done.</p>
 </div>
-<p class="wgb-eyebrow">Service Packages</p>
-<h2>Repair & Tune-Up Tiers</h2>
+<h2>Service Packages</h2>
 <div class="wgb-divider"></div>
 <div class="wgb-service-grid">
 <div class="wgb-service-card wgb-tier-1">
@@ -238,8 +238,7 @@ gap: 2rem;
 </div>
 </div>
 <div class="wgb-alacarte">
-<p class="wgb-eyebrow">Individual Services</p>
-<h2>A La Carte Services</h2>
+<h2>Individual Services</h2>
 <div class="wgb-divider"></div>
 <p style="max-width:640px;font-size:.95rem;margin-bottom:1.5rem;">Just need one thing done rather than a full tune-up? These common repairs and installs are available individually, priced on their own.</p>
 <div class="wgb-alacarte-grid">
@@ -275,7 +274,7 @@ gap: 2rem;
 <p class="wgb-eyebrow">Ready to Upgrade?</p>
 <h2>Bike Trade-In</h2>
 <div class="wgb-divider"></div>
-<p>Got your eye on a new bike, but your current one is just hanging around? Trade it in and put that value toward something new — no listings, no awkward meetups, no hassle. <strong>Trade-in credit can only be applied toward a new bike purchase</strong> — it can't be used toward a used or pre-owned bike.</p>
+<p>Got your eye on a new bike, but your current one is just hanging around? Trade it in and put that value toward something new — no listings, no awkward meetups, no hassle. <strong>Trade-in credit can only be applied toward a new bike purchase</strong> — it can’t be used toward a used or pre-owned bike.</p>
 <div class="wgb-steps">
 <div class="wgb-step"><div class="wgb-step-num">1</div><p>Bring us your well-loved (or lightly neglected) bike</p></div>
 <div class="wgb-step"><div class="wgb-step-num">2</div><p>Take a spin around the shop while we check it out</p></div>
@@ -286,11 +285,10 @@ gap: 2rem;
 </div>
 </div>
 <div style="margin-top:5rem;">
-<p class="wgb-eyebrow">Why WGB</p>
-<h2>Partners in Your Progress</h2>
+<h2>Why WGB</h2>
 <div class="wgb-divider"></div>
 <div class="wgb-pillars">
-<div class="wgb-pillar"><h3>Customer-First Philosophy</h3><p>Every decision begins with the rider's experience. Our goal is to help each customer feel confident, comfortable, and informed.</p></div>
+<div class="wgb-pillar"><h3>Customer-First Philosophy</h3><p>Every decision begins with the rider’s experience. Our goal is to help each customer feel confident, comfortable, and informed.</p></div>
 <div class="wgb-pillar"><h3>Operational Efficiency</h3><p>We maintain lean, well-organized systems that allow us to provide fast, consistent, and transparent service — accessible without sacrificing quality.</p></div>
 <div class="wgb-pillar"><h3>Expert Knowledge</h3><p>Our mechanics and educators bring years of hands-on expertise. We use that knowledge not just to fix problems, but to teach riders how to prevent them.</p></div>
 </div>
