@@ -1,11 +1,13 @@
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&family=Nunito:wght@700;800;900&display=swap');
 
   :root {
     --dark-blue:#1A599C; --green:#658B43; --beige:#D2B89E;
     --light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
     --cream:#F1DDCB; --orange:#EF4723; --white:#FFFFFF;
     --font-sub:'Noto Serif',Georgia,serif; --font-body:'Lato',sans-serif;
+    --font-display:'Nunito',sans-serif;
+    --green-text:#4B6B32;
     --radius:4px; --max-w:1160px; --transition:0.25s ease;
   }
 
@@ -13,11 +15,12 @@
   .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
   .wgb a { text-decoration: none; color: inherit; }
   .wgb img { display: block; max-width: 100%; }
+  .wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
 
   .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
   .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
-  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
-  .wgb h2, .wgb h3, .wgb h4 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; }
+  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green-text); margin-bottom: .5rem; }
+  .wgb h2, .wgb h3, .wgb h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; }
   .wgb h2 { font-size: clamp(1.5rem,3vw,2.2rem); }
   .wgb h3 { font-size: 1.15rem; }
   .wgb h4 { font-size: .9rem; }
@@ -143,7 +146,7 @@
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,.1);
     font-size: .75rem;
-    color: rgba(210,184,158,.45);
+    color: rgba(210,184,158,.75);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -184,13 +187,12 @@
 
         <!-- MISSION + VALUES -->
         <div>
-          <p class="wgb-eyebrow">Our Mission</p>
           <h2>Why Wheelie Good Bikes?</h2>
           <div class="wgb-divider"></div>
           <div class="wgb-mission-body">
             <p>Our mission is simple yet powerful: to empower every rider through knowledge.</p>
             <p>We create a space where cyclists of all experience levels are treated with respect, feel genuinely welcome, and leave with a deeper understanding of their bikes and their own capabilities. This philosophy shapes everything we do — from how we service bikes to how we educate our customers.</p>
-            <p>Wheelie Good Bikes isn't just a retail store; it's a center for learning, connection, and community.</p>
+            <p>Wheelie Good Bikes isn’t just a retail store; it’s a center for learning, connection, and community.</p>
             <p>We provide expert repairs, personalized consultations, and hands-on workshops that give riders confidence and independence. Whether someone is buying their first commuter bike, choosing an e-bike for daily use, or upgrading a family cargo setup, we guide them with integrity and care — helping them make informed, sustainable decisions.</p>
             <p>By teaching as much as we repair, and listening as much as we sell, we build long-term trust and loyalty.</p>
           </div>
@@ -201,14 +203,14 @@
 
       <!-- WHAT WE EMBODY — full width below -->
       <div style="margin-top:3.5rem;">
-        <p class="wgb-eyebrow">What We Embody</p>
+        <p class="wgb-eyebrow">Our Values</p>
         <div class="wgb-divider"></div>
         <div class="wgb-values">
           <div class="wgb-value-card"><h4>Inclusivity</h4><p>Every rider belongs here. No experience level, body type, budget, or background is unwelcome.</p></div>
           <div class="wgb-value-card"><h4>Education</h4><p>We teach as much as we fix. Leaving with more knowledge than you arrived with is the goal.</p></div>
-          <div class="wgb-value-card"><h4>Sustainability</h4><p>Bikes are one of the most sustainable ways to get around. We're proud to support that mission every day.</p></div>
+          <div class="wgb-value-card"><h4>Sustainability</h4><p>Bikes are one of the most sustainable ways to get around. We’re proud to support that mission every day.</p></div>
           <div class="wgb-value-card"><h4>Community</h4><p>Rogers Park is our home. Group rides, events, and genuine relationships are at the heart of what we do.</p></div>
-          <div class="wgb-value-card"><h4>Expertise Without Elitism</h4><p>We know a lot about bikes — and we never make you feel like you don't.</p></div>
+          <div class="wgb-value-card"><h4>Expertise Without Elitism</h4><p>We know a lot about bikes — and we never make you feel like you don’t.</p></div>
         </div>
       </div>
 

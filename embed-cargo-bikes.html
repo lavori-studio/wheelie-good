@@ -1,11 +1,13 @@
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&family=Nunito:wght@700;800;900&display=swap');
 
   :root {
     --dark-blue:#1A599C; --green:#658B43; --beige:#D2B89E;
     --light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
     --cream:#F1DDCB; --orange:#EF4723; --white:#FFFFFF;
     --font-sub:'Noto Serif',Georgia,serif; --font-body:'Lato',sans-serif;
+    --font-display:'Nunito',sans-serif;
+    --green-text:#4B6B32;
     --radius:4px; --max-w:1160px; --transition:0.25s ease;
   }
 
@@ -13,11 +15,12 @@
   .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
   .wgb a { text-decoration: none; color: inherit; }
   .wgb img { display: block; max-width: 100%; }
+  .wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
 
   .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
   .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
-  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
-  .wgb h2, .wgb h3 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; }
+  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green-text); margin-bottom: .5rem; }
+  .wgb h2, .wgb h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; }
   .wgb h2 { font-size: clamp(1.5rem,3vw,2.2rem); }
   .wgb h3 { font-size: 1.1rem; }
   .wgb .wgb-divider { width: 48px; height: 4px; background: var(--light-blue); border-radius: 2px; margin: 1rem 0 1.5rem; }
@@ -55,9 +58,9 @@
   .wgb .wgb-cargo-photo img { width: 100%; height: 340px; object-fit: cover; display: block; }
   .wgb .wgb-cargo-photo-caption { background: var(--off-black); padding: .75rem 1rem; }
   .wgb .wgb-cargo-photo-caption p { font-family: var(--font-sub); font-size: .8rem; color: var(--beige); font-style: italic; }
-  .wgb .wgb-cargo-content { background: var(--white); border-radius: var(--radius); padding: 1.75rem; border: 1px solid rgba(0,0,0,.06); border-left: 6px solid var(--green); }
+  .wgb .wgb-cargo-content { background: var(--white); border-radius: var(--radius); padding: 1.75rem; border: 1px solid rgba(0,0,0,.12); }
   .wgb .wgb-cargo-content h3 { margin-bottom: .4rem; }
-  .wgb .wgb-cargo-subtitle { font-family: var(--font-sub); font-style: italic; color: var(--green); font-size: .875rem; margin-bottom: 1rem; }
+  .wgb .wgb-cargo-subtitle { font-family: var(--font-sub); font-style: italic; color: var(--green-text); font-size: .875rem; margin-bottom: 1rem; }
   .wgb .wgb-include-list { list-style: none; display: flex; flex-direction: column; gap: .3rem; }
   .wgb .wgb-include-list li { font-size: .875rem; padding-left: 1.25rem; position: relative; }
   .wgb .wgb-include-list li::before { content: '—'; position: absolute; left: 0; color: var(--light-blue); font-weight: 700; }
@@ -65,7 +68,6 @@
 
   /* CTA BAND */
   .wgb .wgb-cta { background: var(--dark-blue); padding: 4rem 2rem; text-align: center; border-radius: var(--radius); margin-top: 4.5rem; }
-  .wgb .wgb-cta .wgb-eyebrow { color: var(--light-blue); }
   .wgb .wgb-cta h2 { color: var(--white); margin-bottom: 1rem; }
   .wgb .wgb-cta p { font-family: var(--font-sub); color: var(--beige); max-width: 480px; margin: 0 auto 2rem; font-size: 1rem; }
   .wgb .wgb-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -82,7 +84,7 @@
   .wgb-footer {
     background: var(--off-black);
     color: var(--beige);
-    padding: 3.5rem 2rem 2rem;
+    padding: 3.5rem 2rem 5rem;
     border-top: 3px solid var(--green);
     width: 100vw;
     position: relative;
@@ -140,7 +142,7 @@
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,.1);
     font-size: .75rem;
-    color: rgba(210,184,158,.45);
+    color: rgba(210,184,158,.75);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -152,7 +154,7 @@
   }
   @media (max-width: 560px) {
     .wgb-footer-inner { grid-template-columns: 1fr; }
-    .wgb-footer { padding: 3rem 1.25rem 2rem; }
+    .wgb-footer { padding: 3rem 1.25rem 4rem; }
     .wgb-footer-bottom { flex-direction: column; }
   }
 </style>
@@ -162,16 +164,14 @@
   <div class="wgb-container">
 
     <!-- INTRO -->
-    <p class="wgb-eyebrow">Cargo Bikes</p>
     <h2>Essential Transportation for Real Life</h2>
     <div class="wgb-divider"></div>
     <div class="wgb-intro">
-      <p>For a lot of riders, a cargo bike isn't a novelty — it's the vehicle that actually gets you where you need to go. School drop-off, the grocery run, hauling gear for a weekend outing, or just carrying more than a standard bike ever could: a cargo bike can take over trips you'd otherwise make by car, and open up a simpler, more connected way to move through Rogers Park. Whether you're carrying kids, groceries, tools, or a trunk's worth of gear, we're here to help you find the right setup and keep it running strong for years.</p>
+      <p>For a lot of riders, a cargo bike isn’t a novelty — it’s the vehicle that actually gets you where you need to go. School drop-off, the grocery run, hauling gear for a weekend outing, or just carrying more than a standard bike ever could: a cargo bike can take over trips you’d otherwise make by car, and open up a simpler, more connected way to move through Rogers Park. Whether you’re carrying kids, groceries, tools, or a trunk’s worth of gear, we’re here to help you find the right setup and keep it running strong for years.</p>
     </div>
 
     <!-- BENEFITS -->
     <div style="margin-top:3.5rem;">
-      <p class="wgb-eyebrow">Why Riders Switch</p>
       <h2>A New Way of Life, One Ride at a Time</h2>
       <div class="wgb-divider"></div>
       <div class="wgb-pillars">
@@ -180,7 +180,7 @@
           <p>School runs, grocery hauls, weekend errands — a cargo bike can handle the trips that used to mean digging out the car keys. Less time circling for parking, more time actually getting there.</p>
         </div>
         <div class="wgb-pillar">
-          <h3>Room for Whatever You're Hauling</h3>
+          <h3>Room for Whatever You’re Hauling</h3>
           <p>Longtail and box-style cargo bikes carry kids, groceries, gear, or all of it at once. No more choosing what fits — just load up and go.</p>
         </div>
         <div class="wgb-pillar">
@@ -196,7 +196,6 @@
 
     <!-- TYPES -->
     <div style="margin-top:3.5rem;">
-      <p class="wgb-eyebrow">Find Your Fit</p>
       <h2>Types of Cargo Bikes We Work With</h2>
       <div class="wgb-divider"></div>
       <div class="wgb-types">
@@ -206,7 +205,7 @@
         </div>
         <div class="wgb-type-card">
           <h3>Box Bike (Bakfiets)</h3>
-          <p>A front-mounted cargo box puts kids or cargo where you can see them. A favorite for riders who want company along for the ride, whether that's a kid, a dog, or just a big grocery haul.</p>
+          <p>A front-mounted cargo box puts kids or cargo where you can see them. A favorite for riders who want company along for the ride, whether that’s a kid, a dog, or just a big grocery haul.</p>
         </div>
         <div class="wgb-type-card">
           <h3>Mid-Tail</h3>
@@ -217,10 +216,9 @@
 
     <!-- SERVICE -->
     <div class="wgb-cargo-service">
-      <p class="wgb-eyebrow">Keeping You Rolling</p>
       <h2>Cargo Bike Service &amp; Support</h2>
       <div class="wgb-divider"></div>
-      <p style="max-width:640px;font-size:.95rem;margin-bottom:1.5rem;">Cargo bikes work hard, and we treat them that way — not as an oddity, but as essential transportation. Our mechanics have hands-on experience with longtail, box bike, and mid-tail setups, so whether it's a routine tune-up, a brake bleed, or an accessory install, we'll get your hauler back in action and keep it dependable for daily use.</p>
+      <p style="max-width:640px;font-size:.95rem;margin-bottom:1.5rem;">Cargo bikes work hard, and we treat them that way — not as an oddity, but as essential transportation. Our mechanics have hands-on experience with longtail, box bike, and mid-tail setups, so whether it’s a routine tune-up, a brake bleed, or an accessory install, we’ll get your hauler back in action and keep it dependable for daily use.</p>
       <div class="wgb-cargo-grid">
         <div class="wgb-cargo-photo">
           <img
@@ -250,9 +248,8 @@
 
     <!-- CTA -->
     <div class="wgb-cta">
-      <p class="wgb-eyebrow">Thinking It Over?</p>
       <h2>Come Talk Cargo Bikes With Us</h2>
-      <p>Not sure which setup fits your life or your routine? Stop by the shop for a no-pressure conversation — we'll help you figure out what actually makes sense for how you get around.</p>
+      <p>Not sure which setup fits your life or your routine? Stop by the shop for a no-pressure conversation — we’ll help you figure out what actually makes sense for how you get around.</p>
       <div class="wgb-cta-actions">
         <a href="/services" class="wgb-btn wgb-btn-primary" style="background:var(--light-blue);">See Service Pricing</a>
         <a href="mailto:info@wheeliegoodbikeschicago.com" class="wgb-btn wgb-btn-white">Ask a Question</a>

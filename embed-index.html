@@ -1,5 +1,5 @@
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&family=Nunito:wght@700;800;900&display=swap');
 
   /* Hide Lightspeed's native footer on this page — our own .wgb-footer replaces it */
   #tile-custom-footer-BCq2W2 { display: none !important; }
@@ -10,6 +10,8 @@
     --cream:#F1DDCB; --orange:#EF4723; --white:#FFFFFF;
     --font-sub:'Noto Serif',Georgia,serif;
     --font-body:'Lato',sans-serif;
+    --font-display:'Nunito',sans-serif;
+    --green-text:#4B6B32;
     --radius:4px; --max-w:1160px; --transition:0.25s ease;
   }
 
@@ -17,11 +19,12 @@
   .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
   .wgb a { text-decoration: none; color: inherit; }
   .wgb img { display: block; max-width: 100%; }
+  .wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
 
   .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
   .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
-  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
-  .wgb h1, .wgb h2, .wgb h3 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; }
+  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green-text); margin-bottom: .5rem; }
+  .wgb h1, .wgb h2, .wgb h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; }
   .wgb h1 { font-size: clamp(2rem,5vw,3.2rem); }
   .wgb h2 { font-size: clamp(1.5rem,3vw,2.2rem); }
   .wgb h3 { font-size: 1.15rem; }
@@ -99,18 +102,30 @@
   .wgb .wgb-info-item { display: flex; align-items: center; gap: .5rem; font-size: .85rem; }
   .wgb .wgb-info-item svg { width: 16px; height: 16px; flex-shrink: 0; opacity: .85; }
 
-  /* SERVICES GRID */
-  .wgb .wgb-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
-  .wgb .wgb-card {
-    display: block;
-    background: var(--white); border-radius: var(--radius);
-    padding: 1.75rem; border: 1px solid rgba(0,0,0,.06);
+  /* SERVICES — FEATURED + COMPACT */
+  .wgb .wgb-feat-row { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+  .wgb .wgb-feat-card {
+    display: block; background: var(--off-black); color: var(--white);
+    border-radius: var(--radius); padding: 2.25rem; position: relative; overflow: hidden;
     transition: box-shadow var(--transition), transform var(--transition);
   }
-  .wgb .wgb-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); transform: translateY(-2px); }
-  .wgb .wgb-card-icon { color: var(--dark-blue); margin-bottom: 1rem; }
-  .wgb .wgb-card h3 { margin-bottom: .5rem; }
-  .wgb .wgb-card p { font-size: .9rem; line-height: 1.65; }
+  .wgb .wgb-feat-card:hover { box-shadow: 0 10px 34px rgba(0,0,0,.18); transform: translateY(-2px); }
+  .wgb .wgb-feat-card.wgb-feat-alt { background: var(--dark-blue); }
+  .wgb .wgb-feat-icon { color: var(--light-blue); margin-bottom: 1.25rem; }
+  .wgb .wgb-feat-card.wgb-feat-alt .wgb-feat-icon { color: var(--beige); }
+  .wgb .wgb-feat-card h3 { color: var(--white); font-size: 1.3rem; margin-bottom: .6rem; }
+  .wgb .wgb-feat-card p { font-size: .9rem; color: var(--beige); max-width: 40ch; }
+
+  .wgb .wgb-compact-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .wgb .wgb-compact-card {
+    display: block; background: var(--white); border-radius: var(--radius);
+    padding: 1.4rem; border: 1px solid rgba(0,0,0,.08);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .wgb .wgb-compact-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.1); transform: translateY(-2px); }
+  .wgb .wgb-compact-icon { color: var(--green); margin-bottom: .6rem; }
+  .wgb .wgb-compact-card h3 { font-size: .95rem; margin-bottom: .35rem; }
+  .wgb .wgb-compact-card p { font-size: .82rem; line-height: 1.55; color: #333; }
 
   /* CTA BAND */
   .wgb .wgb-cta { background: var(--dark-blue); padding: 4rem 2rem; text-align: center; }
@@ -129,12 +144,13 @@
     .wgb .wgb-section { padding: 3rem 0; }
     .wgb .wgb-container { padding: 0 1.25rem; }
     .wgb .wgb-cta { padding: 3rem 1.25rem; }
+    .wgb .wgb-feat-row { grid-template-columns: 1fr; }
   }
   /* FOOTER — full-width escape */
   .wgb-footer {
     background: var(--off-black);
     color: var(--beige);
-    padding: 3.5rem 2rem 2rem;
+    padding: 3.5rem 2rem 5rem;
     border-top: 3px solid var(--green);
     /* Break out of platform content wrapper if needed */
     width: 100vw;
@@ -193,7 +209,7 @@
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,.1);
     font-size: .75rem;
-    color: rgba(210,184,158,.45);
+    color: rgba(210,184,158,.75);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -208,7 +224,7 @@
   }
   @media (max-width: 560px) {
     .wgb-footer-inner { grid-template-columns: 1fr; }
-    .wgb-footer { padding: 3rem 1.25rem 2rem; }
+    .wgb-footer { padding: 3rem 1.25rem 4rem; }
     .wgb-footer-bottom { flex-direction: column; }
   }
 </style>
@@ -228,8 +244,8 @@
       </div>
       <div class="wgb-hero-photo">
         <img
-          src="https://lavori-studio.github.io/wheelie-good/wheelie-good-ribbon-cutting.webp"
-          alt="Wheelie Good Bikes ribbon cutting — grand opening in Rogers Park"
+          src="https://lavori-studio.github.io/wheelie-good/wheeliegood_shop.jpg"
+          alt="Wheelie Good Bikes shop in Rogers Park"
           loading="eager"
         />
         <div class="wgb-hero-photo-caption">
@@ -267,62 +283,56 @@
       <p class="wgb-eyebrow">What We Do</p>
       <h2>Everything you need to ride with confidence</h2>
       <div class="wgb-divider"></div>
-      <div class="wgb-grid-3">
 
-        <div class="wgb-card">
-          <div class="wgb-card-icon">
-            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <h3>Bike Repairs</h3>
-          <div class="wgb-divider" style="background:var(--green);"></div>
-          <p>From safety checks to full overhauls, our mechanics bring real expertise to every bike. Appointments available to minimize your time without a ride.</p>
-        </div>
-
-        <div class="wgb-card">
-          <div class="wgb-card-icon">
-            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-          </div>
-          <h3>Bike Sales</h3>
-          <div class="wgb-divider" style="background:var(--green);"></div>
-          <p>Standard bikes, e-bikes, and cargo bikes — we carry options for commuters, families, and everyday riders. We'll help you find the right fit.</p>
-        </div>
-
-        <a href="/events" class="wgb-card">
-          <div class="wgb-card-icon">
-            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <h3>Community, Events & Workshops</h3>
-          <div class="wgb-divider" style="background:var(--green);"></div>
-          <p>Group rides, hands-on workshops, and community gatherings. We believe cycling is more fun together — whatever your experience level, from fixing a flat to understanding your drivetrain.</p>
-        </a>
-
-        <a href="/services" class="wgb-card">
-          <div class="wgb-card-icon">
-            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <h3>E-Bikes</h3>
-          <div class="wgb-divider" style="background:var(--green);"></div>
-          <p>E-bikes for easier commutes and everyday errands. We'll help you find the right setup, sales and service available.</p>
-        </a>
-
-        <a href="/cargo-bikes" class="wgb-card">
-          <div class="wgb-card-icon">
-            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 19h9V9H6a3 3 0 000 6h9"/><path d="M12 9V5h3l3 4"/></svg>
+      <div class="wgb-feat-row">
+        <a href="/cargo-bikes" class="wgb-feat-card">
+          <div class="wgb-feat-icon">
+            <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 19h9V9H6a3 3 0 000 6h9"/><path d="M12 9V5h3l3 4"/></svg>
           </div>
           <h3>Cargo Bikes</h3>
-          <div class="wgb-divider" style="background:var(--green);"></div>
-          <p>Cargo bikes for families and haulers — real solutions for carrying kids, groceries, and gear by bike. Sales and service available.</p>
+          <p>Real solutions for carrying kids, groceries, and gear by bike. Sales and service for longtail, box, and mid-tail setups.</p>
         </a>
-
-        <div class="wgb-card">
-          <div class="wgb-card-icon">
-            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+        <a href="/services" class="wgb-feat-card wgb-feat-alt">
+          <div class="wgb-feat-icon">
+            <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
-          <h3>Bike Trade-In</h3>
-          <div class="wgb-divider" style="background:var(--green);"></div>
-          <p>Ready to upgrade? Trade in your current bike toward something new. Roll it in and we handle the rest — no listings, no hassle.</p>
+          <h3>E-Bikes</h3>
+          <p>Easier commutes and everyday errands. We’ll help you find the right setup — sales and service available.</p>
+        </a>
+      </div>
+
+      <div class="wgb-compact-row">
+        <div class="wgb-compact-card">
+          <div class="wgb-compact-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Bike Repairs</h3>
+          <p>From safety checks to full overhauls, our mechanics bring real expertise to every bike.</p>
         </div>
 
+        <div class="wgb-compact-card">
+          <div class="wgb-compact-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3>Bike Sales</h3>
+          <p>Standard bikes, e-bikes, and cargo bikes for commuters, families, and everyday riders.</p>
+        </div>
+
+        <a href="/events" class="wgb-compact-card">
+          <div class="wgb-compact-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Community, Events &amp; Workshops</h3>
+          <p>Group rides, hands-on workshops, and community gatherings — cycling is more fun together.</p>
+        </a>
+
+        <div class="wgb-compact-card">
+          <div class="wgb-compact-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+          </div>
+          <h3>Bike Trade-In</h3>
+          <p>Trade in your current bike toward something new. No listings, no hassle.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -332,7 +342,7 @@
     <div class="wgb-container">
       <p class="wgb-eyebrow">Ready to Ride?</p>
       <h2>Stop in, call, or book a service appointment</h2>
-      <p>We're at 6981 N Sheridan Rd in Rogers Park. Appointments available to minimize your time without a bike.</p>
+      <p>We’re at 6981 N Sheridan Rd in Rogers Park. Appointments available to minimize your time without a bike.</p>
       <div class="wgb-cta-actions">
         <a href="/services" class="wgb-btn wgb-btn-primary" style="background:var(--light-blue);">Book a Service</a>
         <a href="https://www.google.com/maps/dir/?api=1&destination=6981+N+Sheridan+Rd+Chicago+IL+60626" target="_blank" class="wgb-btn wgb-btn-outline-white">Get Directions</a>

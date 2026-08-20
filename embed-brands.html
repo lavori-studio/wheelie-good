@@ -1,11 +1,13 @@
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&family=Nunito:wght@700;800;900&display=swap');
 
   :root {
     --dark-blue:#1A599C; --green:#658B43; --beige:#D2B89E;
     --light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
     --cream:#F1DDCB; --white:#FFFFFF;
     --font-sub:'Noto Serif',Georgia,serif; --font-body:'Lato',sans-serif;
+    --font-display:'Nunito',sans-serif;
+    --green-text:#4B6B32;
     --radius:4px; --max-w:1160px; --transition:0.25s ease;
   }
 
@@ -13,11 +15,12 @@
   .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
   .wgb a { text-decoration: none; color: inherit; }
   .wgb img { display: block; max-width: 100%; }
+  .wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
 
   .wgb .wgb-container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
   .wgb .wgb-section { padding: 5rem 0; background: var(--cream); }
-  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green); margin-bottom: .5rem; }
-  .wgb h2 { font-family: var(--font-body); font-weight: 700; line-height: 1.15; font-size: clamp(1.5rem,3vw,2.2rem); }
+  .wgb .wgb-eyebrow { font-family: var(--font-sub); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green-text); margin-bottom: .5rem; }
+  .wgb h2 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; font-size: clamp(1.5rem,3vw,2.2rem); }
   .wgb .wgb-divider { width: 48px; height: 4px; background: var(--light-blue); border-radius: 2px; margin: 1rem 0 1.5rem; }
   .wgb .wgb-intro { max-width: 640px; font-size: 1rem; line-height: 1.8; margin-bottom: 3rem; }
 
@@ -98,7 +101,7 @@
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,.1);
     font-size: .75rem;
-    color: rgba(210,184,158,.45);
+    color: rgba(210,184,158,.75);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -119,10 +122,9 @@
 <section class="wgb-section">
   <div class="wgb-container">
 
-    <p class="wgb-eyebrow">What We Carry</p>
     <h2>Brands We Sell</h2>
     <div class="wgb-divider"></div>
-    <p class="wgb-intro">We're selective about what goes on our shelves. Every brand here is one we've ridden, tested, and trust to hold up — from frames and components to bags, helmets, and everyday gear.</p>
+    <p class="wgb-intro">We’re selective about what goes on our shelves. Every brand here is one we’ve ridden, tested, and trust to hold up — from frames and components to bags, helmets, and everyday gear.</p>
 
     <div class="wgb-brand-grid">
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/abus-logo.jpg" alt="Abus logo" loading="lazy"><span class="wgb-brand-name">Abus</span></div>
@@ -137,10 +139,10 @@
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/pdw-logo.avif" alt="PDW logo" loading="lazy"><span class="wgb-brand-name">PDW</span></div>
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/phil-wood-logo.png" alt="Phil Wood logo" loading="lazy"><span class="wgb-brand-name">Phil Wood</span></div>
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/racktime-logo.jpg" alt="Racktime logo" loading="lazy"><span class="wgb-brand-name">Racktime</span></div>
-      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/rene-herse-logo.webp" alt="Rene Herse logo" loading="lazy"><span class="wgb-brand-name">Rene Herse</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/reneherse-logo.jpg" alt="Rene Herse logo" loading="lazy"><span class="wgb-brand-name">Rene Herse</span></div>
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/logo-simworks.avif" alt="Sim Works logo" loading="lazy"><span class="wgb-brand-name">Sim Works</span></div>
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/surly-logo.jpg" alt="Surly logo" loading="lazy"><span class="wgb-brand-name">Surly</span></div>
-      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/tern-logo.png" alt="Tern logo" loading="lazy"><span class="wgb-brand-name">Tern</span></div>
+      <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/tern-logo.png" alt="Tern logo" loading="lazy"><span class="wgb-brand-name">Tern (parts only)</span></div>
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/velo-orange-logo.jpg" alt="Velo Orange logo" loading="lazy"><span class="wgb-brand-name">Velo Orange</span></div>
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/velocity-wheels-logo.png" alt="Velocity logo" loading="lazy"><span class="wgb-brand-name">Velocity</span></div>
       <div class="wgb-brand-card"><img class="wgb-brand-logo" src="https://lavori-studio.github.io/wheelie-good/white-industries-logo.png" alt="White Industries logo" loading="lazy"><span class="wgb-brand-name">White Industries</span></div>
