@@ -16,7 +16,7 @@
   }
 
   .wgb * { box-sizing: border-box; margin: 0; padding: 0; }
-  .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; }
+  .wgb { font-family: var(--font-body); color: var(--off-black); line-height: 1.65; background: var(--cream); }
   .wgb a { text-decoration: none; color: inherit; }
   .wgb img { display: block; max-width: 100%; }
   .wgb a:focus-visible, .wgb button:focus-visible, .wgb [tabindex]:focus-visible { outline: 2px solid var(--light-blue); outline-offset: 2px; border-radius: 2px; }
@@ -150,7 +150,7 @@
   .wgb-footer {
     background: var(--off-black);
     color: var(--beige);
-    padding: 3.5rem 2rem 5rem;
+    padding: 3.5rem 2rem 2rem;
     border-top: 3px solid var(--green);
     /* Break out of platform content wrapper if needed */
     width: 100vw;
@@ -159,7 +159,7 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-top: 0;
+    margin-top: 3.5rem;
   }
   .wgb-footer-inner {
     max-width: var(--max-w);
@@ -224,7 +224,7 @@
   }
   @media (max-width: 560px) {
     .wgb-footer-inner { grid-template-columns: 1fr; }
-    .wgb-footer { padding: 3rem 1.25rem 4rem; }
+    .wgb-footer { padding: 3rem 1.25rem 2rem; margin-top: 2.5rem; }
     .wgb-footer-bottom { flex-direction: column; }
   }
 </style>
