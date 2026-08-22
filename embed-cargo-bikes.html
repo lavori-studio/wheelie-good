@@ -1,6 +1,9 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Lato:wght@300;400;700&family=Nunito:wght@700;800;900&display=swap');
 
+  /* Zero out Lightspeed's custom-code tile padding/margin so our own layout controls all spacing */
+  [id^="tile-custom-code-"] { padding: 0 !important; margin: 0 !important; }
+
   :root {
     --dark-blue:#1A599C; --green:#658B43; --beige:#D2B89E;
     --light-blue:#4A97A7; --red:#A32327; --off-black:#101A23;
